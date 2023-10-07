@@ -1,0 +1,112 @@
+<!doctype html>
+
+<html lang="en-US" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title> Harikrishna Sahu </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Harikrishna Sahu is reserach scientist at Georgia Tech.">
+</head>
+
+<body> 
+    <header>
+    </header>
+
+    <main>
+        <section>
+            <h1> Research interests and contributions</h1>
+            <h2>Polymer structure predictor (PSP): A python toolkit for generating a hierarchy of polymer models</h2>
+            <p>A 3D atomic-level polymer model is the starting point for any physics-based simulation study, and an autonomous model
+                generator is in high demand. We developed a python toolkit named Polymer Structure Predictor (PSP) for building a
+                hierarchy of polymer models, ranging from oligomers to the infinite polymer chain, crystal and amorphous structures.
+                The only input of PSP is the simplified molecular-input line-entry system (SMILES) strings of the polymer repeating unit.
+                The output structures and accompanying force field (GAFF2/OPLS-AA) parameter files can be used for downstream in-silico simulations
+                with a variety of computational packages, including VASP, ORCA, LAMMPS, and GAMESS. To ensure the reliability of polymer models,
+                they were compared with known structures, and various properties of polymers, such as bandgap, ring-opening polymerization enthalpy,
+                and glass transition temperature, were computed using ab initio/MD simulations and verified against reported experimental data.
+                PSP has already been integrated with the polymer version of computational autonomy for materials discovery (CAMD)[Chem. Sci., 2020, 11, 8517],
+                an artificial intelligence-based platform for discovering polymers with targeted performance. The PSP package includes a Colab notebook
+                using which users can go through several examples, building their own models, visualizing them, and downloading them for later use.
+                This open-source package is distributed under the MIT license and can be obtained from GitHub at
+                <a href="https://github.com/Ramprasad-Group/PSP">https://github.com/Ramprasad-Group/PSP</a>.</p>
+            
+            <h2>An informatics approach for designing conducting polymers</h2>
+            <p>Conductive polymers are highly desired for many applications, such as thermoelectrics, transparent electrodes, and
+                hole/electron transport layers. It is still challenging to select a polymeric material with a conductivity of 1000 S/cm,
+                which is a major drawback for further development of electronic devices. To realize metal-like conductivity, I built
+                machine-learning (ML) models using experimental data and three hierarchical levels of descriptors, i.e., (1) atomic-level fragments,
+                (2) block-level fragments, and (3) chain-level features. Nearly 845,000 new candidates are screened, and promising candidates are
+                identified for their potential applications in organic devices. New guidelines are proposed for designing conducting polymers by
+                performing Shapley additive explanations (SHAP) analysis and computing the importance (z-score) of molecular fragments. Models
+                are also incorporated at <a href="www.polymergenome.org">www.polymergenome.org</a> to provide easy access for predicting the electrical conductivity of desired polymer/dopant blends.</p>
+            
+            <h2>Designing organic materials for solar cell applications using machine learning</h2>
+            <p>Designing promising molecules is in high demand for further increasing the efficiency of organic photovoltaics (OPVs),
+                which can be accelerated through virtual screening of a large number of possible candidate molecules. The Scharber model,
+                widely used in current virtual screening works for OPVs, is not accurate enough (r~0.2) for the prediction of power conversion
+                efficiency (PCE) as it is based on only energies of the frontier molecular orbitals of organic molecules. An efficient and
+                computationally cheap model is desired to explore the chemical space of conjugated molecules. However, building a machine learning
+                (ML) model is highly challenging as the complete set of descriptors required to capture the complexity of the energy conversion
+                process is still unknown. In this project, we first established a sufficiently large dataset for experimental PCE of reported
+                molecules with a wide variety of chemical structures. Starting from introducing a set of relevant descriptors, we trained several
+                ML models using gradient boosting regression tree (GBRT) and artificial neural network (ANN) algorithms by 10-fold cross-validation
+                technique in combination with the stratified sampling method, and impressive performance (r=0.8) is achieved for a GBRT model.
+            </p>
+
+            <p>
+                High-throughput virtual screening of ~10,000 candidate molecules, constructed from commonly used 32 unique building blocks,
+                are performed using these ML models. Important building blocks are identified, and new design rules are introduced to construct
+                efficient molecules. Combining the results of both GBRT and ANN models, 126 candidates with theoretically predicted efficiency
+                > 8% are proposed for further analysis, synthesis, and device fabrication.
+            </p>
+
+            <p>
+                Although predicting the PCE using our ML models is quite promising, it is highly desired to improve a specific device property
+                to fulfill a particular commercial requirement. For example, solar-to-fuel energy conversion requires high open-circuit
+                voltage (Voc) whereas a high short circuit current (Jsc) is necessary for solar window applications. A series of machine
+                learning models are built for three important device characteristics (Voc, Jsc, and fill factor) using RF and GBRT algorithms
+                and relevant molecular properties as descriptors, resulting in an impressive predictive performance (r=0.7). These models may
+                play a vital role in designing promising organic materials for a specific photovoltaic application with high Voc/Jsc.
+                Important descriptors for each device parameter are identified, and their relations to the energy conversion process
+                are discussed in detail. Notably, the energetic differences of lowest occupied molecular orbital (LUMO) and LUMO+1
+                of a donor molecule (∆L), the energetic difference of LUMO of donor and LUMO of acceptor, and change in dipole moment
+                in going from the ground state to the first excited state for donor molecules (∆μge), not frequently considered for
+                designing OPV materials, are found to be important for tuning device parameters.
+            </p>
+
+            <h2>In-silico investigation of optical and electronic properties of helical oligomers</h2>
+            <p>
+                In addition to being of immense biological interest, helices are progressively seeking attention for applications
+                in materials science. Their unique helical structures fulfill many essential needs. If one of the two helices
+                (i.e., right and left-handed helices) can be selectively synthesized, all helical oligomers will behave as
+                optically active material due to their inherent chiral structures. A helical π-conjugated polymer having high
+                conductivity is also suitable for applications like a molecular solenoid. Our study on the stabilities and
+                optoelectronic properties of different conformers of π-spaced heterocyclic oligomers shows that helical
+                conformers of vinylene-linked systems are the most stable conformers, and their properties are quite different
+                than their respective linear conformers. A detailed study on pyridine-furan, pyridine-pyrrole, and pyridine-thiophene
+                oligomers shows that their helical conformers are feasible. The absorption spectra of these oligomers are composed
+                of multiple electronic transitions having significant oscillator strengths.
+            </p>
+
+            <h2><i>In-silico</i> investigation of optical and electronic properties of heterocyclic conjugated polymers</h2>
+            <p>
+                Heterocyclic conjugated polymers are extensively studied for their applications in organic devices, such as organic
+                light-emitting diodes, organic photovoltaics, and organic field-effect transistors. Lack of appropriate optical gap,
+                improper alignment of frontier orbitals with respect to the work function of electrodes, small mobilities of charge carriers,
+                inappropriate hole-electron binding energy, etc., of organic materials often limit the performance of organic devices compared
+                to the inorganic devices. Although many studies have been devoted to finding means and methods to improve the performance of
+                these organic devices, designing an appropriate material with the required electronic and optical properties is still a challenging task.
+                Computational studies, at this juncture, are of immense help in understanding the physical properties of existing conjugated polymers
+                and designing new materials. The objective of this project was to explore the structure and properties of various heterocyclic
+                conjugated polymers using density functional theory (DFT) and time-dependent DFT (TDDFT) methods. Our study reveals that a
+                few heterocyclic azomethines are suitable for applications such as light absorption, hole injection, and hole transport in organic devices.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+    </footer>
+</body>
+
+</html>
