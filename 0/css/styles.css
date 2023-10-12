@@ -54,6 +54,7 @@ footer a:hover {
     height: 550px; /* Set a fixed height for the .home container */ 
     background: url(../images/moleculeAI_1920.jpg) no-repeat center center fixed;
     background-size: 100% auto; /* Adjust the background size property */
+    background-attachment: scroll; /* Add this property for the scrolling effect */
 }
 
 .home.content-wrapper{
