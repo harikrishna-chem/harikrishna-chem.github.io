@@ -1,0 +1,142 @@
+/*
+COLOR PALETTE
+
+Dark green #3c8453
+Sandy beige #bcaa96
+Dark gray #222222
+Light gray #d3d4d6
+Off-white #f6f6f6
+*/
+
+/* GLOBAL STYLES
+------------------------------------*/
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }  
+
+body {
+    background: #f6f6f6;
+}
+
+/* links */
+a{
+    color: #3c8453
+}
+a:hover {
+    color:#bcaa96;
+    text-decoration: none;
+}
+/* links in the footer */
+footer a {
+    color: #bcaa96;
+}
+footer a:hover {
+    color:#3c8453;
+}
+/* button */
+.btn {
+    background: #3c8453;
+    color: #f6f6f6;
+    text-decoration: none;
+}
+
+/* HOME
+-----------------------------------*/
+.home{
+    margin: 0;
+    padding: 0;
+    width: 100%; /* Set a fixed width for the .home container */
+    height: 550px; /* Set a fixed height for the .home container */ 
+    background: url(../images/moleculeAI_1920.jpg) no-repeat center center fixed;
+    background-size: 100% auto; /* Adjust the background size property */
+}
+
+.home.content-wrapper{
+    background: rgb(255 255 255 / 0.9);
+}
+.empty-block-1 {
+    height: 580px;
+}
+
+/* PROFILE
+-----------------------------------*/
+
+/* RESEARCH
+-----------------------------------*/
+
+/* USEFUL INFORMATION
+-----------------------------------*/
+
+/* CONTACT
+-----------------------------------*/
+
+/* Education
+-----------------------------------*/
+
+/* Publication
+-----------------------------------*/
+
+/* FOOTER
+-----------------------------------*/
+footer{
+    background: #222;
+    color: #d3d4d6
+}
+
+/* HEADER
+-----------------------------------*/
+header {
+    background-color: transparent;
+    padding: 10px; /* Add padding to create space around the elements */
+    text-align: left;
+}
+
+.logo, .name, .right {
+    display: inline-block; /* Use inline-block to display elements in a horizontal line */
+    vertical-align: middle; /* Vertically align the elements to middle */
+    margin: 10px;
+}
+
+  /* Style the logo */
+.logo img {
+    max-width: 100px; /* Set a max width for the logo image */
+    height: auto; /* Maintain the image's aspect ratio */
+  }
+/* Style the name */
+.name h1 {
+    font-size: 36px; /* Adjust the font size as needed */
+    margin: 0; /* Remove default margin */
+  }
+  
+  /* Style the welcome text */
+  .name p {
+    font-size: 18px; /* Adjust the font size as needed */
+    margin: 0; /* Remove default margin */
+  }
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-align: center; /* Align the text to the right within the navbar */
+    font-size: 18px
+}
+/* Style the list items and display them horizontally */
+.navbar li {
+    display: inline;
+  }
+.navbar li a {
+    color: rgb(181, 124, 17); /* Text color */
+    text-align: center;
+    padding: 14px 10px; /* Adjust padding as needed */
+    text-decoration: none;
+  }
+.navbar li a:hover {
+    background-color: #dacdaa; /* Change the background color on hover if needed */
+  }
+  

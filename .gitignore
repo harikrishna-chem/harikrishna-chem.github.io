@@ -104,3 +104,6 @@ ENV/
 
 # DS Store
 .DS_store
+
+# unused images
+0/images/others
