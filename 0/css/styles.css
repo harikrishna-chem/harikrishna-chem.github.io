@@ -19,13 +19,21 @@ html {
     box-sizing: inherit;
   }  
 
-body {
-    background: #f6f6f6;
+html, body {
+  height: 100%,
+}
+
+ body {
+    background: #738796;
+    margin: 0 auto;
+/*    padding: 30px;
+    width: 100%;
+    max-width: 1240px; */
 }
 
 /* links */
 a{
-    color: #3c8453
+    color: #005a4e
 }
 a:hover {
     color:#bcaa96;
@@ -40,33 +48,78 @@ footer a:hover {
 }
 /* button */
 .btn {
-    background: #3c8453;
-    color: #f6f6f6;
+    background: #6f7f80;
+    color: #106969;
     text-decoration: none;
 }
 
 /* HOME
 -----------------------------------*/
-.home{
-    margin: 0;
-    padding: 0;
-    width: 100%; /* Set a fixed width for the .home container */
-    height: 550px; /* Set a fixed height for the .home container */ 
+ .home{
+    margin: 0 auto;
+    padding: 30px;
+    width: 100%;
+ /*   max-width: 1240px; /* Set a fixed width for the .home container */
+    height: 550px; /* Set a fixed height for the .home container */
     background: url(../images/moleculeAI_1920.jpg) no-repeat center center fixed;
     background-size: 100% auto; /* Adjust the background size property */
     background-attachment: scroll; /* Add this property for the scrolling effect */
+    display: flex;
+    flex-direction: column;
 }
 
-.home.content-wrapper{
-    background: rgb(255 255 255 / 0.9);
+.content-wrapper{
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto; /* Center the content horizontally */
+    flex: 1 0 auto;
 }
 .empty-block-1 {
-    height: 580px;
+    height: 530px;
+}
+
+.main-intro {
+  display: flow-root;
+  font-size: 20px;
+  margin: 30px 0;
+}
+
+.main-intro h2 {
+  border-bottom: 2px solid #38393a;
+  width: 100%;
+}
+
+.main-intro img{
+    width: 300px;
+    float: left;
+    margin-right: 20px;
+}
+
+.main-group {
+  display: flow-root;
+  font-size: 20px;
+  margin: 0 0;
+}
+
+.main-group h2 {
+  border-bottom: 2px solid #38393a;
+  width: 70%;
+}
+
+.main-group img{
+  width: 650px;
+  height: 488px;
+  float: right;
+  margin-left: 20px;
 }
 
 /* PROFILE
 -----------------------------------*/
-
+.download-link {
+  position: fixed;
+  top: 15px;
+  left:10px;
+}
 /* RESEARCH
 -----------------------------------*/
 
@@ -86,28 +139,34 @@ footer a:hover {
 -----------------------------------*/
 footer{
     background: #222;
-    color: #d3d4d6
+    color: #d3d4d6;
+    display: flex;
+    padding: 10px;
 }
 
 /* HEADER
 -----------------------------------*/
 header {
     background-color: transparent;
-    padding: 10px; /* Add padding to create space around the elements */
-    text-align: left;
+    margin: 0 auto;
+    padding: 10px;
+    width: 100%;
+    max-width: 1240px;
 }
-
-.logo, .name, .right {
-    display: inline-block; /* Use inline-block to display elements in a horizontal line */
-    vertical-align: middle; /* Vertically align the elements to middle */
-    margin: 10px;
+.logo, .name {
+  display: inline-block; /* Use inline-block to display elements in a horizontal line */
+  vertical-align: middle; /* Vertically align the elements to middle */
 }
-
+.right {
+ display: inline-block; /* Use flexbox to create a flex container */
+ float: right;
+}
   /* Style the logo */
 .logo img {
-    max-width: 100px; /* Set a max width for the logo image */
+    max-width: 80px; /* Set a max width for the logo image */
     height: auto; /* Maintain the image's aspect ratio */
   }
+
 /* Style the name */
 .name h1 {
     font-size: 36px; /* Adjust the font size as needed */
@@ -132,12 +191,12 @@ header {
     display: inline;
   }
 .navbar li a {
-    color: rgb(181, 124, 17); /* Text color */
+    color: rgb(0, 0, 0); /* Text color */
     text-align: center;
     padding: 14px 10px; /* Adjust padding as needed */
     text-decoration: none;
   }
 .navbar li a:hover {
-    background-color: #dacdaa; /* Change the background color on hover if needed */
+    background-color: #455e88; /* Change the background color on hover if needed */
   }
   
