@@ -1,0 +1,29 @@
+---
+layout: layouts/base.njk
+title: About
+description: About Harikrishna Sahu.
+section: about
+---
+<section class="page-hero">
+  <p class="eyebrow">About</p>
+  <h1>Materials informatics across computation, data, and design.</h1>
+  <p class="lede">I am a Materials Informatics Engineer at Blue Origin. My background spans computational chemistry, polymer informatics, machine learning, and autonomous materials workflows.</p>
+</section>
+
+<section class="content-grid">
+  <div class="prose">
+    <h2>Background</h2>
+    <p>Before joining Blue Origin in May 2026, I worked at Georgia Tech as a Research Scientist II and postdoctoral researcher in the Ramprasad group. Prior to Georgia Tech, I was a postdoctoral researcher at Nanjing University, China.</p>
+    <p>I received my M.Sc. degree in Chemistry from the National Institute of Technology Rourkela and my Ph.D. in computational chemistry from the Indian Institute of Technology Guwahati. My work focuses on using computational and machine-learning methods to accelerate materials discovery.</p>
+  </div>
+  <aside class="timeline">
+    <h2>Experience</h2>
+    {% for item in experience %}
+      <article class="timeline-item{% if item.current %} is-current{% endif %}">
+        <p>{{ item.dates }}</p>
+        <h3>{{ item.role }}</h3>
+        <span>{{ item.place }}</span>
+      </article>
+    {% endfor %}
+  </aside>
+</section>

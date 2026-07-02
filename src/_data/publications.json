@@ -1,0 +1,137 @@
+[
+  {
+    "title": "Load-dependent Hardness Prediction for Materials using Machine Learning",
+    "authors": "Madhubanti Mukherjee, Rampi Ramprasad, and Harikrishna Sahu",
+    "venue": "arXiv",
+    "year": 2026,
+    "details": "2604.20636",
+    "url": "https://arxiv.org/abs/2604.20636",
+    "selected": true
+  },
+  {
+    "title": "POLYT5: an encoder-decoder foundation chemical language model for generative polymer design",
+    "authors": "Harikrishna Sahu, Wei Xiong, Anagha Savit, Shivank S. Shukla, and Rampi Ramprasad",
+    "venue": "npj Artificial Intelligence",
+    "year": 2026,
+    "details": "2, 30",
+    "url": "https://doi.org/10.1038/s44387-026-00087-1",
+    "selected": true
+  },
+  {
+    "title": "On-the-Fly Machine-Learned Force Fields for High-Fidelity Polymer Glass Transition Simulations",
+    "authors": "Ashutosh Srivastava, Sakshi Agarwal, Shivank Shukla, Harikrishna Sahu, and Rampi Ramprasad",
+    "venue": "arXiv",
+    "year": 2026,
+    "details": "2601.17137",
+    "url": "https://arxiv.org/abs/2601.17137",
+    "selected": false
+  },
+  {
+    "title": "From Corpus to Innovation: Advancing Organic Solar Cell Design with Large Language Models",
+    "authors": "Harikrishna Sahu, Akhlak Mahmood, Labeeba B. Shafique, and Rampi Ramprasad",
+    "venue": "npj Computational Materials",
+    "year": 2026,
+    "details": "12, 27",
+    "url": "https://doi.org/10.1038/s41524-025-01896-9",
+    "selected": true
+  },
+  {
+    "title": "Exploring materials data through collaboration: 2024 KRICT ChemDX Hackathon",
+    "authors": "Su-Hyun Yoo, Andre K. Y. Low, Jose Recatala-Gomez, Harikrishna Sahu, and coauthors",
+    "venue": "Journal of Materials Informatics",
+    "year": 2025,
+    "details": "5, 54",
+    "url": "https://doi.org/10.20517/jmi.2025.65",
+    "selected": false
+  },
+  {
+    "title": "Machine Learning for Green Solvents: Assessment, Selection and Substitution",
+    "authors": "Rohan Datta, Janhavi Nistane, Abhishek T. Sose, Harikrishna Sahu, and Rampi Ramprasad",
+    "venue": "Advanced Science",
+    "year": 2025,
+    "details": "e16851",
+    "url": "https://doi.org/10.1002/advs.202516851",
+    "selected": false
+  },
+  {
+    "title": "Polymer design for solvent separations by integrating simulations, experiments and known physics via machine learning",
+    "authors": "Janhavi Nistane, Rohan Datta, Young Joo Lee, Harikrishna Sahu, Seung Soon Jang, Ryan Lively, and Rampi Ramprasad",
+    "venue": "npj Computational Materials",
+    "year": 2025,
+    "details": "11, 187",
+    "url": "https://doi.org/10.1038/s41524-025-01681-8",
+    "selected": false
+  },
+  {
+    "title": "polyBART: A Chemical Linguist for Polymer Property Prediction and Generative Design",
+    "authors": "Anagha Savit, Harikrishna Sahu, Shivank Shukla, Wei Xiong, and Rampi Ramprasad",
+    "venue": "Findings of ACL: EMNLP 2025",
+    "year": 2025,
+    "details": "12104-12119",
+    "url": "https://aclanthology.org/2025.findings-emnlp.647",
+    "selected": true
+  },
+  {
+    "title": "A machine learning approach to predicting the spall strength of metals and alloys",
+    "authors": "Keara G. Frawley, Naresh N. Thadhani, Rampi Ramprasad, and Harikrishna Sahu",
+    "venue": "Journal of Applied Physics",
+    "year": 2025,
+    "details": "137, 104905",
+    "url": "https://doi.org/10.1063/5.0248560",
+    "selected": false
+  },
+  {
+    "title": "Elucidating Photochemical Conversion Mechanism of PDMS to Silica under Deep UV Light and Ozone",
+    "authors": "Harikrishna Sahu, Mingzhe Li, Madhubanti Mukherjee, Liang Yue, H. Jerry Qi, and Rampi Ramprasad",
+    "venue": "Journal of Physical Chemistry Letters",
+    "year": 2025,
+    "details": "16, 747-753",
+    "url": "https://doi.org/10.1021/acs.jpclett.4c03477",
+    "selected": true
+  },
+  {
+    "title": "High-temperature high-k polyolefin by rational molecular design",
+    "authors": "Jing Hao, Irene Mutegi, Madhubanti Mukherjee, Harikrishna Sahu, Omer Yassin, Rampi Ramprasad, Gregory A. Sotzing, and Yang Cao",
+    "venue": "Proceedings of the National Academy of Sciences",
+    "year": 2024,
+    "details": "121, e2415388121",
+    "url": "https://doi.org/10.1073/pnas.2415388121",
+    "selected": true
+  },
+  {
+    "title": "Polymer Structure Predictor (PSP): A Python toolkit for predicting atomic-level structural models for a range of polymer geometries",
+    "authors": "Harikrishna Sahu, Kuan-Hsuan Shen, Joseph H. Montoya, Huan Tran, and Rampi Ramprasad",
+    "venue": "Journal of Chemical Theory and Computation",
+    "year": 2022,
+    "details": "18, 2737",
+    "url": "https://doi.org/10.1021/acs.jctc.2c00022",
+    "selected": true
+  },
+  {
+    "title": "An informatics approach for designing conducting polymers",
+    "authors": "Harikrishna Sahu, Hongmo Li, Lihua Chen, Arunkumar Chitteth Rajan, Chiho Kim, Natalie Stingelin, and Rampi Ramprasad",
+    "venue": "ACS Applied Materials and Interfaces",
+    "year": 2021,
+    "details": "13, 53314",
+    "url": "https://doi.org/10.1021/acsami.1c04017",
+    "selected": true
+  },
+  {
+    "title": "Unraveling correlations between molecular properties and device parameters of organic solar cells using machine learning",
+    "authors": "Harikrishna Sahu and Haibo Ma",
+    "venue": "Journal of Physical Chemistry Letters",
+    "year": 2019,
+    "details": "10, 7277",
+    "url": "https://doi.org/10.1021/acs.jpclett.9b02772",
+    "selected": true
+  },
+  {
+    "title": "Toward predicting efficiency of organic solar cells via machine learning and improved descriptors",
+    "authors": "Harikrishna Sahu, Weining Rao, Alessandro Troisi, and Haibo Ma",
+    "venue": "Advanced Energy Materials",
+    "year": 2018,
+    "details": "8, 1801032",
+    "url": "https://doi.org/10.1002/aenm.201801032",
+    "selected": true
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "role": "Materials Informatics Engineer",
+    "place": "Blue Origin, USA",
+    "dates": "May 04, 2026 - present",
+    "current": true
+  },
+  {
+    "role": "Research Scientist II",
+    "place": "Georgia Tech, USA",
+    "dates": "May 2023 - May 01, 2026"
+  },
+  {
+    "role": "Postdoctoral Researcher",
+    "place": "Georgia Tech, USA",
+    "dates": "September 2019 - May 2023"
+  },
+  {
+    "role": "Postdoctoral Researcher",
+    "place": "Nanjing University, China",
+    "dates": "2017 - 2019"
+  },
+  {
+    "role": "Ph.D. in Computational Chemistry",
+    "place": "Indian Institute of Technology Guwahati, India",
+    "dates": "2011 - 2016"
+  },
+  {
+    "role": "M.Sc. in Chemistry",
+    "place": "National Institute of Technology Rourkela, India",
+    "dates": "2009 - 2011"
+  }
+]

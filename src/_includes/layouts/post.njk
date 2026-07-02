@@ -1,0 +1,23 @@
+---
+layout: layouts/base.njk
+section: writing
+---
+<article class="post-shell">
+  <header class="post-header">
+    <p class="eyebrow">Writing</p>
+    <h1>{{ title }}</h1>
+    <div class="post-meta">
+      <time datetime="{{ page.date | isoDate }}">{{ page.date | readableDate }}</time>
+      {% if tags %}
+        <span aria-hidden="true">/</span>
+        <span>{{ tags | join(", ") }}</span>
+      {% endif %}
+      {% if sample %}
+        <span class="sample-badge">sample draft</span>
+      {% endif %}
+    </div>
+  </header>
+  <div class="post-content">
+    {{ content | safe }}
+  </div>
+</article>

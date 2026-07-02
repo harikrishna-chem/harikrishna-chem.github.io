@@ -1,0 +1,110 @@
+[
+  {
+    "title": "POLYT5",
+    "subtitle": "Foundation language model for generative polymer design",
+    "type": "Research software",
+    "status": "Paper published",
+    "featured": true,
+    "summary": "An encoder-decoder chemical language model that predicts polymer properties and generates new polymer structures conditioned on target performance.",
+    "bullets": [
+      "Generates chemically valid, synthesizable polymer candidates without exhaustive enumeration.",
+      "Applied to dielectric polymer discovery with over 20,000 promising candidates.",
+      "Connected with a general-purpose LLM for natural-language property prediction and design."
+    ],
+    "links": [
+      {
+        "label": "npj Artificial Intelligence",
+        "url": "https://doi.org/10.1038/s44387-026-00087-1"
+      }
+    ]
+  },
+  {
+    "title": "matgpr",
+    "subtitle": "Physics-informed Gaussian Process Regression for materials informatics",
+    "type": "Open-source package",
+    "status": "Active development",
+    "featured": true,
+    "highlight": true,
+    "summary": "A public Python package for reproducible materials-informatics workflows with Gaussian Process Regression, uncertainty-aware prediction, materials fingerprints, and physics-informed mean functions.",
+    "bullets": [
+      "Supports scikit-learn and GPyTorch GPR workflows with validation, learning curves, uncertainty diagnostics, and plotting utilities.",
+      "Includes physics-aware kernels, target transforms, virtual-observation constraints, derivative-constrained models, and reusable materials-physics equation templates.",
+      "Designed as a practical platform for future tutorials and blog posts on physics-informed GPR, Bayesian optimization, and small-data materials modeling."
+    ],
+    "links": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/harikrishna-chem/matgpr"
+      },
+      {
+        "label": "Documentation",
+        "url": "https://harikrishna-chem.github.io/matgpr/"
+      }
+    ]
+  },
+  {
+    "title": "Polymer Structure Predictor",
+    "subtitle": "Autonomous atomic-scale polymer model generation",
+    "type": "Open-source package",
+    "status": "Paper published",
+    "featured": true,
+    "summary": "A Python toolkit that builds a hierarchy of polymer models from repeat-unit SMILES, including oligomers, infinite chains, crystals, and amorphous structures.",
+    "bullets": [
+      "Generates structures and force-field files for downstream simulations.",
+      "Supports workflows in VASP, ORCA, LAMMPS, and GAMESS.",
+      "Open-source package designed to make polymer simulations more autonomous."
+    ],
+    "links": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/Ramprasad-Group/PSP"
+      },
+      {
+        "label": "JCTC article",
+        "url": "https://doi.org/10.1021/acs.jctc.2c00022"
+      }
+    ]
+  },
+  {
+    "title": "Organic Solar Cell Design",
+    "subtitle": "Machine learning for organic photovoltaic materials",
+    "type": "Research theme",
+    "status": "Papers published",
+    "featured": true,
+    "summary": "Models and descriptors for predicting device-relevant properties and guiding virtual screening of donor and acceptor materials.",
+    "bullets": [
+      "Built ML models for power conversion efficiency and device parameters.",
+      "Screened candidate molecules from common donor/acceptor building blocks.",
+      "Identified molecular descriptors connected to Voc, Jsc, and fill factor."
+    ],
+    "links": [
+      {
+        "label": "JPCL article",
+        "url": "https://doi.org/10.1021/acs.jpclett.9b02772"
+      },
+      {
+        "label": "Advanced Energy Materials",
+        "url": "https://doi.org/10.1002/aenm.201801032"
+      }
+    ]
+  },
+  {
+    "title": "Conducting Polymers",
+    "subtitle": "Informatics-guided design rules for electrical conductivity",
+    "type": "Research theme",
+    "status": "Paper published",
+    "featured": false,
+    "summary": "Machine-learning models for polymer conductivity using hierarchical molecular descriptors and explainable feature analysis.",
+    "bullets": [
+      "Screened large candidate spaces for conductive polymer/dopant combinations.",
+      "Used fragment importance and SHAP analysis to derive design guidelines.",
+      "Integrated predictive capability into broader polymer informatics platforms."
+    ],
+    "links": [
+      {
+        "label": "ACS AMI article",
+        "url": "https://doi.org/10.1021/acsami.1c04017"
+      }
+    ]
+  }
+]

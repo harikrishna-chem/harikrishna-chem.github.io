@@ -1,0 +1,28 @@
+---
+layout: layouts/base.njk
+title: Publications
+description: Publications by Harikrishna Sahu.
+section: publications
+---
+<section class="page-hero">
+  <p class="eyebrow">Publications</p>
+  <h1>Selected and recent publications.</h1>
+  <p class="lede">Peer-reviewed work spanning polymer informatics, machine-learning-guided materials design, computational chemistry, and open research software.</p>
+</section>
+
+<section class="publication-groups">
+  {% for group in publications | publicationYearGroups %}
+    <div class="year-group">
+      <h2>{{ group.year }}</h2>
+      <div class="publication-list">
+        {% for publication in group.items %}
+          <article class="publication-item">
+            <h3><a href="{{ publication.url }}">{{ publication.title }}</a></h3>
+            <p>{{ publication.authors }}</p>
+            <p><em>{{ publication.venue }}</em>{% if publication.details %}, {{ publication.details }}{% endif %}.</p>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+</section>

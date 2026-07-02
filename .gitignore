@@ -96,6 +96,12 @@ ENV/
 # mkdocs documentation
 /site
 
+# Eleventy / Node
+node_modules/
+_site/
+.eleventy-cache/
+npm-debug.log*
+
 # mypy
 .mypy_cache/
 

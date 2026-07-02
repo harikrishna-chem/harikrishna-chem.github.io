@@ -1,0 +1,41 @@
+---
+layout: layouts/base.njk
+title: Research
+description: Research themes and contributions by Harikrishna Sahu.
+section: research
+---
+<section class="page-hero">
+  <p class="eyebrow">Research</p>
+  <h1>Tools and models for faster materials discovery.</h1>
+  <p class="lede">A compact view of projects connecting molecular representation, polymer design, simulation automation, and interpretable machine learning.</p>
+</section>
+
+<section class="project-stack">
+  {% for project in projects %}
+    <article class="project-panel{% if project.highlight %} project-panel--highlight{% endif %}" id="{{ project.title | slugify }}">
+      <div>
+        {% if project.type or project.status %}
+          <div class="tag-row project-tags">
+            {% if project.type %}<span>{{ project.type }}</span>{% endif %}
+            {% if project.status %}<span>{{ project.status }}</span>{% endif %}
+          </div>
+        {% endif %}
+        <p class="card-kicker">{{ project.subtitle }}</p>
+        <h2>{{ project.title }}</h2>
+        <p>{{ project.summary }}</p>
+        {% if project.links %}
+          <div class="inline-links">
+            {% for link in project.links %}
+              <a href="{{ link.url }}">{{ link.label }}</a>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+      <ul class="check-list">
+        {% for bullet in project.bullets %}
+          <li>{{ bullet }}</li>
+        {% endfor %}
+      </ul>
+    </article>
+  {% endfor %}
+</section>

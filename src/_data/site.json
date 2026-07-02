@@ -1,0 +1,60 @@
+{
+  "name": "Harikrishna Sahu",
+  "role": "Materials Informatics Engineer",
+  "organization": "Blue Origin",
+  "domain": "harikrishnasahu.com",
+  "year": "2026",
+  "description": "Materials informatics engineer working at the intersection of computational materials science, polymer informatics, and machine learning.",
+  "email": "harikrishnasahu89@gmail.com",
+  "links": [
+    {
+      "label": "Google Scholar",
+      "url": "https://scholar.google.com/citations?user=kiTk5rAAAAAJ&hl=en"
+    },
+    {
+      "label": "ORCID",
+      "url": "https://orcid.org/0000-0001-5458-9488"
+    },
+    {
+      "label": "GitHub",
+      "url": "https://github.com/harikrishna-chem"
+    }
+  ],
+  "nav": [
+    {
+      "key": "home",
+      "label": "Home",
+      "url": "/"
+    },
+    {
+      "key": "about",
+      "label": "About",
+      "url": "/about/"
+    },
+    {
+      "key": "research",
+      "label": "Research",
+      "url": "/research/"
+    },
+    {
+      "key": "publications",
+      "label": "Publications",
+      "url": "/publications/"
+    },
+    {
+      "key": "writing",
+      "label": "Writing",
+      "url": "/writing/"
+    },
+    {
+      "key": "cv",
+      "label": "CV",
+      "url": "/cv/"
+    },
+    {
+      "key": "contact",
+      "label": "Contact",
+      "url": "/contact/"
+    }
+  ]
+}
