@@ -537,6 +537,8 @@ h3 {
 
 .contact-panel {
   display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
   margin-top: 1rem;
   padding: 1rem;
 }
