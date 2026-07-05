@@ -109,7 +109,5 @@ npm-debug.log*
 .idea
 
 # DS Store
+.DS_Store
 .DS_store
-
-# unused images
-0/images/others

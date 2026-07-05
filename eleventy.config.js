@@ -1,7 +1,6 @@
 export default function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy({ "0/images": "assets/images" });
-  eleventyConfig.addPassthroughCopy({ "0/cv": "cv" });
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
+  eleventyConfig.addPassthroughCopy({ "src/cv": "cv" });
   eleventyConfig.addPassthroughCopy({ "src/CNAME": "CNAME" });
 
   eleventyConfig.addFilter("readableDate", (dateValue) => {
