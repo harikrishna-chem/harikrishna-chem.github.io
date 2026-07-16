@@ -19,6 +19,10 @@ export default function (eleventyConfig) {
     return Array.isArray(items) ? items.slice(0, count) : items;
   });
 
+  eleventyConfig.addFilter("json", (value) => {
+    return JSON.stringify(value);
+  });
+
   eleventyConfig.addFilter("where", (items, key, value) => {
     return Array.isArray(items) ? items.filter((item) => item[key] === value) : [];
   });
