@@ -1,6 +1,7 @@
 ---
 layout: layouts/post.njk
 title: "POLYT5: Turning Polymer Design Into a Text-to-Text Problem"
+seoTitle: "POLYT5 generative polymer design using a chemical language model"
 summary: "A first note on POLYT5, a polymer-native encoder-decoder language model for property prediction, conditional generation, and high-temperature dielectric polymer design."
 date: 2026-07-02T15:00:00-07:00
 tags:

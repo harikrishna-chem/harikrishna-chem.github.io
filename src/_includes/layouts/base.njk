@@ -10,19 +10,21 @@
   {% else %}
     {% set pageTitle = site.name %}
   {% endif %}
-  {% set pageDescription = description or site.description %}
+  {% set pageDescription = description or summary or site.description %}
   {% set canonicalUrl = "https://" ~ site.domain ~ page.url %}
   {% set socialImage = "https://" ~ site.domain ~ "/assets/images/hari-photo_500.jpg" %}
+  {% set isWritingPost = section == "writing" and page.url != "/writing/" %}
   <title>{{ pageTitle }}</title>
   <meta name="description" content="{{ pageDescription }}">
   <link rel="canonical" href="{{ canonicalUrl }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.name }} Writing Feed" href="/feed.xml">
   <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon/favicon-48.png">
   <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/favicon-192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
   <meta name="theme-color" content="#f6f1e8">
   <meta property="og:site_name" content="{{ site.name }}">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="{% if isWritingPost %}article{% else %}website{% endif %}">
   <meta property="og:title" content="{{ pageTitle }}">
   <meta property="og:description" content="{{ pageDescription }}">
   <meta property="og:url" content="{{ canonicalUrl }}">
@@ -59,6 +61,36 @@
       ]
     }
   </script>
+  {% if isWritingPost %}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": {{ (seoTitle or title) | json | safe }},
+      "name": {{ title | json | safe }},
+      "description": {{ pageDescription | json | safe }},
+      "datePublished": {{ (page.date | isoDate) | json | safe }},
+      "dateModified": {{ ((dateModified or page.date) | isoDate) | json | safe }},
+      "url": {{ canonicalUrl | json | safe }},
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": {{ canonicalUrl | json | safe }}
+      },
+      "author": {
+        "@type": "Person",
+        "name": {{ site.name | json | safe }},
+        "url": {{ ("https://" ~ site.domain ~ "/") | json | safe }}
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": {{ site.name | json | safe }}
+      },
+      "image": {{ socialImage | json | safe }},
+      "articleSection": "Writing"{% if tags %},
+      "keywords": {{ tags | json | safe }}{% endif %}
+    }
+  </script>
+  {% endif %}
   <link rel="stylesheet" href="/assets/css/site.css">
 </head>
 <body>

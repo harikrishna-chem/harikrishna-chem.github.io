@@ -35,3 +35,13 @@ Build the static site:
 ```bash
 npm run build
 ```
+
+## Search And Discovery
+
+The site generates search/discovery files during the Eleventy build:
+
+- `https://harikrishnasahu.com/sitemap.xml`
+- `https://harikrishnasahu.com/robots.txt`
+- `https://harikrishnasahu.com/feed.xml`
+
+When adding a post in `src/writing/`, include `title`, `seoTitle`, `summary`, `date`, and `tags` in the front matter. Submit `sitemap.xml` in Google Search Console after publishing major site updates or new writing.

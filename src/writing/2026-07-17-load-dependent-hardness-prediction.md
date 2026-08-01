@@ -1,6 +1,7 @@
 ---
 layout: layouts/post.njk
 title: "Hardness Prediction Needs the Load"
+seoTitle: "Load-dependent Vickers hardness prediction using machine learning"
 summary: "A note on our Applied Physics A paper showing why load-dependent experimental data can matter more than DFT-derived hardness proxies for Vickers hardness prediction."
 date: 2026-07-17T20:30:00-07:00
 tags:

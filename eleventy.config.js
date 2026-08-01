@@ -1,3 +1,5 @@
+const siteTimeZone = "America/Los_Angeles";
+
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "src/cv": "cv" });
@@ -7,12 +9,38 @@ export default function (eleventyConfig) {
     return new Intl.DateTimeFormat("en", {
       year: "numeric",
       month: "long",
-      day: "numeric"
+      day: "numeric",
+      timeZone: siteTimeZone
     }).format(new Date(dateValue));
   });
 
   eleventyConfig.addFilter("isoDate", (dateValue) => {
-    return new Date(dateValue).toISOString().slice(0, 10);
+    const date = new Date(dateValue);
+    const parts = new Intl.DateTimeFormat("en", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      timeZone: siteTimeZone
+    }).formatToParts(date);
+    const part = (type) => parts.find((item) => item.type === type).value;
+    return `${part("year")}-${part("month")}-${part("day")}`;
+  });
+
+  eleventyConfig.addFilter("rssDate", (dateValue) => {
+    return new Date(dateValue).toUTCString();
+  });
+
+  eleventyConfig.addFilter("absoluteUrl", (url, domain) => {
+    return new URL(url || "/", `https://${domain}`).href;
+  });
+
+  eleventyConfig.addFilter("xmlEscape", (value) => {
+    return String(value ?? "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&apos;");
   });
 
   eleventyConfig.addFilter("limit", (items, count) => {

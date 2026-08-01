@@ -1,0 +1,29 @@
+---
+permalink: /feed.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ site.name | xmlEscape }} - Writing</title>
+    <link>https://{{ site.domain }}/writing/</link>
+    <description>{{ site.description | xmlEscape }}</description>
+    <language>en</language>
+    <atom:link href="https://{{ site.domain }}/feed.xml" rel="self" type="application/rss+xml" />
+    {% if collections.posts.length %}
+    <lastBuildDate>{{ collections.posts[0].date | rssDate }}</lastBuildDate>
+    {% endif %}
+    {% for post in collections.posts | limit(20) %}
+    <item>
+      <title>{{ post.data.title | xmlEscape }}</title>
+      <link>{{ post.url | absoluteUrl(site.domain) }}</link>
+      <guid isPermaLink="true">{{ post.url | absoluteUrl(site.domain) }}</guid>
+      <pubDate>{{ post.date | rssDate }}</pubDate>
+      <description>{{ post.data.summary | xmlEscape }}</description>
+      {% for tag in post.data.tags %}
+      <category>{{ tag | xmlEscape }}</category>
+      {% endfor %}
+    </item>
+    {% endfor %}
+  </channel>
+</rss>

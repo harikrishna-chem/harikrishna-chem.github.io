@@ -1,6 +1,7 @@
 ---
 layout: layouts/post.njk
 title: "Why I Built matgpr for Materials Informatics"
+seoTitle: "matgpr physics-informed Gaussian Process Regression for materials informatics"
 summary: "A first note on matgpr, an open-source toolkit for uncertainty-aware, physics-informed Gaussian Process Regression workflows in materials informatics."
 date: 2026-07-05T10:00:00-07:00
 tags:
