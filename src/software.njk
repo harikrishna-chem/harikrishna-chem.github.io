@@ -11,29 +11,33 @@ section: software
 </section>
 
 <section class="tool-grid">
-  {% for project in projects | where("tool", true) %}
+  {% for project in projects | where("tool", true) | sortByNumber("toolOrder") %}
     <article class="tool-card{% if project.highlight %} tool-card--highlight{% endif %}" id="{{ project.title | slugify }}">
-      {% if project.type or project.status %}
-        <div class="tag-row project-tags">
-          {% if project.type %}<span>{{ project.type }}</span>{% endif %}
-          {% if project.status %}<span>{{ project.status }}</span>{% endif %}
-        </div>
-      {% endif %}
-      <p class="card-kicker">{{ project.subtitle }}</p>
-      <h2>{{ project.title }}</h2>
-      <p>{{ project.summary }}</p>
-      <ul class="check-list">
-        {% for bullet in project.bullets %}
-          <li>{{ bullet }}</li>
-        {% endfor %}
-      </ul>
-      {% if project.links %}
-        <div class="inline-links">
-          {% for link in project.links %}
-            <a href="{{ link.url }}">{{ link.label }}</a>
+      <div class="tool-card__body">
+        {% if project.type or project.status %}
+          <div class="tag-row project-tags">
+            {% if project.type %}<span>{{ project.type }}</span>{% endif %}
+            {% if project.status %}<span>{{ project.status }}</span>{% endif %}
+          </div>
+        {% endif %}
+        <p class="card-kicker">{{ project.subtitle }}</p>
+        <h2>{{ project.title }}</h2>
+        <p>{{ project.summary }}</p>
+        {% if project.links %}
+          <div class="inline-links">
+            {% for link in project.links %}
+              <a href="{{ link.url }}">{{ link.label }}</a>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+      <div class="tool-card__details">
+        <ul class="check-list">
+          {% for bullet in project.bullets %}
+            <li>{{ bullet }}</li>
           {% endfor %}
-        </div>
-      {% endif %}
+        </ul>
+      </div>
     </article>
   {% endfor %}
 </section>

@@ -62,6 +62,12 @@ export default function (eleventyConfig) {
     return Array.isArray(items) ? items.filter((item) => item[key] === value) : [];
   });
 
+  eleventyConfig.addFilter("sortByNumber", (items, key) => {
+    return Array.isArray(items)
+      ? [...items].sort((a, b) => Number(a[key] ?? 9999) - Number(b[key] ?? 9999))
+      : [];
+  });
+
   eleventyConfig.addFilter("writingTags", (posts) => {
     const tags = new Set();
     for (const post of posts || []) {

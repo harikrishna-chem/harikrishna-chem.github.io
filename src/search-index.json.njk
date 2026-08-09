@@ -43,7 +43,7 @@ eleventyExcludeFromCollections: true
   }
   {%- set firstItem = false -%}
 {%- endfor -%}
-{%- for project in projects | where("tool", true) -%}
+{%- for project in projects | where("tool", true) | sortByNumber("toolOrder") -%}
   {%- if not firstItem %},{% endif -%}
   {
     "type": "Tool",

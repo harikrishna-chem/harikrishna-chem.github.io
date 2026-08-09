@@ -6,6 +6,7 @@
     "status": "Paper published",
     "featured": true,
     "tool": true,
+    "toolOrder": 2,
     "summary": "An encoder-decoder chemical language model that predicts polymer properties and generates new polymer structures conditioned on target performance.",
     "bullets": [
       "Generates chemically valid, synthesizable polymer candidates without exhaustive enumeration.",
@@ -26,6 +27,7 @@
     "status": "Active development",
     "featured": true,
     "tool": true,
+    "toolOrder": 1,
     "highlight": true,
     "summary": "A public Python package for reproducible materials-informatics workflows with Gaussian Process Regression, uncertainty-aware prediction, materials fingerprints, and physics-informed mean functions.",
     "bullets": [
@@ -51,6 +53,7 @@
     "status": "Paper published",
     "featured": true,
     "tool": true,
+    "toolOrder": 3,
     "summary": "A Python toolkit that builds a hierarchy of polymer models from repeat-unit SMILES, including oligomers, infinite chains, crystals, and amorphous structures.",
     "bullets": [
       "Generates structures and force-field files for downstream simulations.",
