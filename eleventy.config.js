@@ -1,5 +1,25 @@
 const siteTimeZone = "America/Los_Angeles";
 
+function bibtexUrlForPublication(url) {
+  const value = String(url || "");
+  const doiMatch = value.match(/^https?:\/\/(?:dx\.)?doi\.org\/(.+)$/i);
+  if (doiMatch) {
+    return `https://api.crossref.org/works/${doiMatch[1]}/transform/application/x-bibtex`;
+  }
+
+  const arxivMatch = value.match(/^https?:\/\/arxiv\.org\/abs\/(.+)$/i);
+  if (arxivMatch) {
+    return `https://arxiv.org/bibtex/${arxivMatch[1]}`;
+  }
+
+  const aclMatch = value.match(/^https?:\/\/aclanthology\.org\/([^/]+)\/?$/i);
+  if (aclMatch) {
+    return `https://aclanthology.org/${aclMatch[1]}.bib`;
+  }
+
+  return "";
+}
+
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "src/cv": "cv" });
@@ -128,6 +148,17 @@ export default function (eleventyConfig) {
     }
     return Array.from(groups, ([year, items]) => ({ year, items }))
       .sort((a, b) => Number(b.year) - Number(a.year));
+  });
+
+  eleventyConfig.addFilter("publicationLinks", (publication) => {
+    const links = [];
+    if (publication?.url) links.push({ label: "Paper", url: publication.url });
+    if (Array.isArray(publication?.links)) links.push(...publication.links);
+
+    const bibtexUrl = publication?.bibtex || bibtexUrlForPublication(publication?.url);
+    if (bibtexUrl) links.push({ label: "BibTeX", url: bibtexUrl });
+
+    return links;
   });
 
   eleventyConfig.addCollection("posts", (collectionApi) => {

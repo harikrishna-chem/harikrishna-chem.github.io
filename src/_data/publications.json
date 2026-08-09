@@ -6,6 +6,16 @@
     "year": 2026,
     "details": "132, 744",
     "url": "https://doi.org/10.1007/s00339-026-09913-4",
+    "links": [
+      {
+        "label": "Writing",
+        "url": "/writing/2026-07-17-load-dependent-hardness-prediction/"
+      },
+      {
+        "label": "Data",
+        "url": "https://github.com/Ramprasad-Group/polyVERSE"
+      }
+    ],
     "selected": true
   },
   {
@@ -24,6 +34,12 @@
     "year": 2026,
     "details": "2, 30",
     "url": "https://doi.org/10.1038/s44387-026-00087-1",
+    "links": [
+      {
+        "label": "Writing",
+        "url": "/writing/2026-07-02-polyt5-generative-polymer-design/"
+      }
+    ],
     "selected": true
   },
   {
@@ -141,6 +157,12 @@
     "year": 2022,
     "details": "18, 2737",
     "url": "https://doi.org/10.1021/acs.jctc.2c00022",
+    "links": [
+      {
+        "label": "Code",
+        "url": "https://github.com/Ramprasad-Group/PSP"
+      }
+    ],
     "selected": true
   },
   {

@@ -26,6 +26,14 @@ section: publications
             </h3>
             <p>{{ publication.authors }}</p>
             <p><em>{{ publication.venue }}</em>{% if publication.details %}, {{ publication.details }}{% endif %}.</p>
+            {% set publicationLinks = publication | publicationLinks %}
+            {% if publicationLinks.length %}
+              <div class="publication-links" aria-label="Publication links for {{ publication.title }}">
+                {% for link in publicationLinks %}
+                  <a href="{{ link.url }}">{{ link.label }}</a>
+                {% endfor %}
+              </div>
+            {% endif %}
           </article>
         {% endfor %}
       </div>
