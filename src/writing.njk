@@ -11,8 +11,17 @@ section: writing
 </section>
 
 <section class="post-index">
+  {% set writingTags = collections.posts | writingTags %}
+  {% if writingTags.length %}
+    <div class="writing-filter" aria-label="Writing topics">
+      <button type="button" class="writing-filter__button is-active" data-tag="all" aria-pressed="true">All</button>
+      {% for tag in writingTags %}
+        <button type="button" class="writing-filter__button" data-tag="{{ tag }}" aria-pressed="false">{{ tag | tagLabel }}</button>
+      {% endfor %}
+    </div>
+  {% endif %}
   {% for post in collections.posts %}
-    <article class="post-row">
+    <article class="post-row" data-tags="{{ post.data.tags | join(' ') }}">
       <time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time>
       <div>
         <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
@@ -26,4 +35,5 @@ section: writing
       </div>
     </article>
   {% endfor %}
+  <p class="writing-empty" hidden>No writing found for this topic.</p>
 </section>

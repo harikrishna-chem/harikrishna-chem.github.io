@@ -62,6 +62,57 @@ export default function (eleventyConfig) {
     return Array.isArray(items) ? items.filter((item) => item[key] === value) : [];
   });
 
+  eleventyConfig.addFilter("writingTags", (posts) => {
+    const tags = new Set();
+    for (const post of posts || []) {
+      for (const tag of post.data?.tags || []) {
+        if (tag !== "posts") tags.add(tag);
+      }
+    }
+    return Array.from(tags).sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+  });
+
+  eleventyConfig.addFilter("tagLabel", (value) => {
+    const tag = String(value ?? "");
+    const labels = {
+      "gaussian-process-regression": "Gaussian Process Regression",
+      "generative-design": "Generative Design",
+      "language-models": "Language Models",
+      "machine-learning": "Machine Learning",
+      "materials-informatics": "Materials Informatics",
+      "matgpr": "matgpr",
+      "physics-informed-ml": "Physics-informed ML",
+      "polymer-design": "Polymer Design",
+      "polymer-language-models": "Polymer Language Models"
+    };
+    if (labels[tag]) return labels[tag];
+
+    return tag
+      .split("-")
+      .map((part) => {
+        if (/^[A-Z0-9]+$/.test(part)) return part;
+        return part.charAt(0).toUpperCase() + part.slice(1);
+      })
+      .join(" ");
+  });
+
+  eleventyConfig.addFilter("toolSearchContent", (projects) => {
+    if (!Array.isArray(projects)) return "";
+
+    const tools = projects.filter((project) => project.tool);
+    return [
+      "Software and Tools research software practical tools materials discovery",
+      ...tools.map((project) => [
+        project.title,
+        project.subtitle,
+        project.summary,
+        ...(project.bullets || []),
+        project.type,
+        project.status
+      ].filter(Boolean).join(" "))
+    ].join(" ");
+  });
+
   eleventyConfig.addFilter("publicationYearGroups", (publications) => {
     const groups = new Map();
     for (const item of publications) {

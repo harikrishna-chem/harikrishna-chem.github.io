@@ -1,0 +1,39 @@
+---
+layout: layouts/base.njk
+title: Software and Tools
+description: Research software, models, datasets, and practical tools by Harikrishna Sahu.
+section: software
+---
+<section class="page-hero">
+  <p class="eyebrow">Software and tools</p>
+  <h1>Research software for materials discovery.</h1>
+  <p class="lede">Open tools, foundation models, and reusable workflows that connect materials data, molecular representations, uncertainty-aware modeling, and polymer design.</p>
+</section>
+
+<section class="tool-grid">
+  {% for project in projects | where("tool", true) %}
+    <article class="tool-card{% if project.highlight %} tool-card--highlight{% endif %}" id="{{ project.title | slugify }}">
+      {% if project.type or project.status %}
+        <div class="tag-row project-tags">
+          {% if project.type %}<span>{{ project.type }}</span>{% endif %}
+          {% if project.status %}<span>{{ project.status }}</span>{% endif %}
+        </div>
+      {% endif %}
+      <p class="card-kicker">{{ project.subtitle }}</p>
+      <h2>{{ project.title }}</h2>
+      <p>{{ project.summary }}</p>
+      <ul class="check-list">
+        {% for bullet in project.bullets %}
+          <li>{{ bullet }}</li>
+        {% endfor %}
+      </ul>
+      {% if project.links %}
+        <div class="inline-links">
+          {% for link in project.links %}
+            <a href="{{ link.url }}">{{ link.label }}</a>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </article>
+  {% endfor %}
+</section>

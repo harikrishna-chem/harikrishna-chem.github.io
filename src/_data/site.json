@@ -41,6 +41,11 @@
       "url": "/research/"
     },
     {
+      "key": "software",
+      "label": "Tools",
+      "url": "/software/"
+    },
+    {
       "key": "publications",
       "label": "Publications",
       "url": "/publications/"

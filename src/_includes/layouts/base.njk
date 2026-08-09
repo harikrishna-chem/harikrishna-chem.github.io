@@ -108,8 +108,8 @@
         {% for item in site.nav %}
           <a class="site-nav__link{% if section == item.key %} is-active{% endif %}" href="{{ item.url }}">{{ item.label }}</a>
         {% endfor %}
-        <form class="header-search" role="search" autocomplete="off" aria-label="Search writings and publications">
-          <input id="header-search-input" type="search" placeholder="Search" aria-label="Search writings and publications" aria-controls="header-search-results" aria-expanded="false">
+        <form class="header-search" role="search" autocomplete="off" aria-label="Search site">
+          <input id="header-search-input" type="search" placeholder="Search" aria-label="Search site" aria-controls="header-search-results" aria-expanded="false">
           <div class="header-search__results" id="header-search-results" hidden></div>
         </form>
       </nav>
@@ -140,7 +140,9 @@
       const results = form.querySelector(".header-search__results");
       const typeRank = {
         Publication: 0,
-        Writing: 1
+        Writing: 1,
+        Tools: 2,
+        Tool: 3
       };
       let index = [];
       let indexLoaded = false;
@@ -282,6 +284,40 @@
 
       document.addEventListener("keydown", (event) => {
         if (event.key === "Escape") closeResults();
+      });
+    })();
+
+    (() => {
+      const filters = document.querySelector(".writing-filter");
+      if (!filters) return;
+
+      const buttons = Array.from(filters.querySelectorAll("[data-tag]"));
+      const posts = Array.from(document.querySelectorAll(".post-row[data-tags]"));
+      const empty = document.querySelector(".writing-empty");
+
+      const applyFilter = (tag) => {
+        let visibleCount = 0;
+
+        for (const post of posts) {
+          const tags = post.dataset.tags.split(/\s+/);
+          const isVisible = tag === "all" || tags.includes(tag);
+          post.hidden = !isVisible;
+          if (isVisible) visibleCount += 1;
+        }
+
+        for (const button of buttons) {
+          const isActive = button.dataset.tag === tag;
+          button.classList.toggle("is-active", isActive);
+          button.setAttribute("aria-pressed", String(isActive));
+        }
+
+        if (empty) empty.hidden = visibleCount > 0;
+      };
+
+      filters.addEventListener("click", (event) => {
+        const button = event.target.closest("[data-tag]");
+        if (!button) return;
+        applyFilter(button.dataset.tag);
       });
     })();
   </script>

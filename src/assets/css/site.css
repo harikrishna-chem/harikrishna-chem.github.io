@@ -335,6 +335,7 @@ h3 {
 .two-column,
 .content-grid,
 .project-stack,
+.tool-grid,
 .publication-groups,
 .post-index {
   padding: 3.5rem 0;
@@ -495,6 +496,12 @@ h3 {
   gap: 1rem;
 }
 
+.tool-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .project-panel {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(260px, 0.85fr);
@@ -502,8 +509,22 @@ h3 {
   padding: clamp(1.1rem, 3vw, 1.6rem);
 }
 
+.tool-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 28px rgba(31, 42, 46, 0.05);
+  display: grid;
+  gap: 1rem;
+  padding: clamp(1.1rem, 3vw, 1.35rem);
+}
+
 .project-panel--highlight {
   border-left: 4px solid var(--teal);
+}
+
+.tool-card--highlight {
+  border-top: 4px solid var(--teal);
 }
 
 .project-tags {
@@ -565,6 +586,37 @@ h3 {
   grid-template-columns: 180px minmax(0, 1fr);
   gap: 1.5rem;
   padding-bottom: 1.2rem;
+}
+
+.writing-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 1.6rem;
+}
+
+.writing-filter__button {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 800;
+  padding: 0.45rem 0.7rem;
+}
+
+.writing-filter__button:hover,
+.writing-filter__button.is-active {
+  background: var(--teal-dark);
+  border-color: var(--teal-dark);
+  color: #ffffff;
+}
+
+.writing-empty {
+  color: var(--muted);
+  margin: 1rem 0 0;
 }
 
 .tag-row {
@@ -651,6 +703,7 @@ code {
   .two-column,
   .content-grid,
   .project-panel,
+  .tool-grid,
   .year-group,
   .post-row {
     grid-template-columns: 1fr;

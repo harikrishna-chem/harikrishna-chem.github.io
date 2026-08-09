@@ -4,6 +4,17 @@ eleventyExcludeFromCollections: true
 ---
 [
 {%- set firstItem = true -%}
+  {
+    "type": "Tools",
+    "title": "Software and Tools",
+    "url": "/software/",
+    "date": "Research software",
+    "sortDate": "0000-00-00",
+    "summary": "Research software, models, datasets, and practical tools for materials discovery.",
+    "tags": ["tools", "software", "research-software", "materials-informatics"],
+    "content": {{ (projects | toolSearchContent) | json | safe }}
+  }
+  {%- set firstItem = false -%}
 {%- for post in collections.posts -%}
   {%- if not firstItem %},{% endif -%}
   {
@@ -29,6 +40,20 @@ eleventyExcludeFromCollections: true
     "summary": {{ (publication.venue ~ (", " if publication.details else "") ~ (publication.details or "")) | json | safe }},
     "tags": {{ [publication.venue, publication.year] | json | safe }},
     "content": {{ (publication.title ~ " " ~ publication.authors ~ " " ~ publication.venue ~ " " ~ publication.year ~ " " ~ (publication.details or "")) | json | safe }}
+  }
+  {%- set firstItem = false -%}
+{%- endfor -%}
+{%- for project in projects | where("tool", true) -%}
+  {%- if not firstItem %},{% endif -%}
+  {
+    "type": "Tool",
+    "title": {{ project.title | json | safe }},
+    "url": {{ ("/software/#" ~ (project.title | slugify)) | json | safe }},
+    "date": {{ (project.status or "") | json | safe }},
+    "sortDate": "0000-00-00",
+    "summary": {{ project.summary | json | safe }},
+    "tags": {{ [project.type, project.status] | json | safe }},
+    "content": {{ (project.title ~ " " ~ project.subtitle ~ " " ~ project.summary ~ " " ~ (project.bullets | join(" ")) ~ " " ~ (project.type or "") ~ " " ~ (project.status or "")) | json | safe }}
   }
   {%- set firstItem = false -%}
 {%- endfor -%}
