@@ -23,7 +23,7 @@ eleventyExcludeFromCollections: true
   {
     "type": "Publication",
     "title": {{ publication.title | json | safe }},
-    "url": {{ publication.url | json | safe }},
+    "url": {{ (publication.url or ("/publications/#" ~ (publication.title | slugify))) | json | safe }},
     "date": {{ publication.year | json | safe }},
     "sortDate": {{ (publication.year ~ "-12-31") | json | safe }},
     "summary": {{ (publication.venue ~ (", " if publication.details else "") ~ (publication.details or "")) | json | safe }},

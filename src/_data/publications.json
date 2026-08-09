@@ -9,6 +9,15 @@
     "selected": true
   },
   {
+    "title": "A Synthetically-accessible Universe of Chemically Recyclable Polymers",
+    "authors": "Anagha Savit, Wei Xiong, Harikrishna Sahu, Shivank S. Shukla, Will R. Gutekunst, and Rampi Ramprasad",
+    "venue": "arXiv",
+    "year": 2026,
+    "details": "2608.00149",
+    "url": "https://arxiv.org/abs/2608.00149",
+    "selected": false
+  },
+  {
     "title": "POLYT5: an encoder-decoder foundation chemical language model for generative polymer design",
     "authors": "Harikrishna Sahu, Wei Xiong, Anagha Savit, Shivank S. Shukla, and Rampi Ramprasad",
     "venue": "npj Artificial Intelligence",
@@ -72,6 +81,15 @@
     "selected": true
   },
   {
+    "title": "Stereoisomerism of Vicinal Polydichloronorbornene for Ultra-High-Temperature Capacitive Energy Storage",
+    "authors": "Jing Hao, Stuti Shukla, Rishi Gurnani, Madhubanti Mukherjee, Harikrishna Sahu, Ashish Khomane, and coauthors",
+    "venue": "Advanced Materials",
+    "year": 2025,
+    "details": "37, 2417625",
+    "url": "https://doi.org/10.1002/adma.202417625",
+    "selected": false
+  },
+  {
     "title": "A machine learning approach to predicting the spall strength of metals and alloys",
     "authors": "Keara G. Frawley, Naresh N. Thadhani, Rampi Ramprasad, and Harikrishna Sahu",
     "venue": "Journal of Applied Physics",
@@ -99,6 +117,24 @@
     "selected": true
   },
   {
+    "title": "Informatics-Driven Design of Superhard B-C-O Compounds",
+    "authors": "Madhubanti Mukherjee, Harikrishna Sahu, Mark D. Losego, Will R. Gutekunst, and Rampi Ramprasad",
+    "venue": "ACS Applied Materials and Interfaces",
+    "year": 2024,
+    "details": "16, 10372-10379",
+    "url": "https://doi.org/10.1021/acsami.3c18105",
+    "selected": false
+  },
+  {
+    "title": "Low-temperature 3D printing of transparent silica glass microstructures",
+    "authors": "Mingzhe Li, Liang Yue, Arunkumar Chitteth Rajan, Luxia Yu, Harikrishna Sahu, S. Macrae Montgomery, Rampi Ramprasad, and H. Jerry Qi",
+    "venue": "Science Advances",
+    "year": 2023,
+    "details": "9, eadi2958",
+    "url": "https://doi.org/10.1126/sciadv.adi2958",
+    "selected": false
+  },
+  {
     "title": "Polymer Structure Predictor (PSP): A Python toolkit for predicting atomic-level structural models for a range of polymer geometries",
     "authors": "Harikrishna Sahu, Kuan-Hsuan Shen, Joseph H. Montoya, Huan Tran, and Rampi Ramprasad",
     "venue": "Journal of Chemical Theory and Computation",
@@ -106,6 +142,33 @@
     "details": "18, 2737",
     "url": "https://doi.org/10.1021/acs.jctc.2c00022",
     "selected": true
+  },
+  {
+    "title": "Interpretable Machine Learning for developing high-performance Organic Solar Cells",
+    "authors": "E. A. J. Abadi, Harikrishna Sahu, S. M. Javadpour, and M. Goharimanesh",
+    "venue": "Materials Today Energy",
+    "year": 2022,
+    "details": "28, 100969",
+    "url": "https://doi.org/10.1016/j.mtener.2022.100969",
+    "selected": false
+  },
+  {
+    "title": "PolyG2G: A novel machine learning algorithm applied to the generative design of polymer dielectrics",
+    "authors": "Rishi Gurnani, Deepak Kamal, Huan Tran, Harikrishna Sahu, Kenny Scharm, Usman Ashraf, and Rampi Ramprasad",
+    "venue": "Chemistry of Materials",
+    "year": 2021,
+    "details": "33, 7008-7016",
+    "url": "https://doi.org/10.1021/acs.chemmater.1c02061",
+    "selected": false
+  },
+  {
+    "title": "Dielectric polymers tolerant to electric field and temperature extremes: integration of phenomenology, informatics, and experimental validation",
+    "authors": "Chao Wu, Lihua Chen, Ajinkya A. Deshmukh, Deepak Kamal, Zongze Li, Pranav Shetty, Jierui Zhou, Harikrishna Sahu, Tran Doan Huan, Gregory A. Sotzing, Rampi Ramprasad, and Yang Cao",
+    "venue": "ACS Applied Materials and Interfaces",
+    "year": 2021,
+    "details": "13, 53416-53424",
+    "url": "https://doi.org/10.1021/acsami.1c11885",
+    "selected": false
   },
   {
     "title": "An informatics approach for designing conducting polymers",
@@ -126,6 +189,15 @@
     "selected": true
   },
   {
+    "title": "Designing promising molecules for organic solar cells via machine learning assisted virtual screening",
+    "authors": "Harikrishna Sahu, Feng Yang, Xiaobo Ye, Jing Ma, Weihai Fang, and Haibo Ma",
+    "venue": "Journal of Materials Chemistry A",
+    "year": 2019,
+    "details": "7, 17480-17488",
+    "url": "https://doi.org/10.1039/C9TA04097H",
+    "selected": false
+  },
+  {
     "title": "Toward predicting efficiency of organic solar cells via machine learning and improved descriptors",
     "authors": "Harikrishna Sahu, Weining Rao, Alessandro Troisi, and Haibo Ma",
     "venue": "Advanced Energy Materials",
@@ -133,5 +205,58 @@
     "details": "8, 1801032",
     "url": "https://doi.org/10.1002/aenm.201801032",
     "selected": true
+  },
+  {
+    "title": "Alternating phenylene and furan/pyrrole/thiophene units-based oligomers: A computational study of the structures and optoelectronic properties",
+    "authors": "Harikrishna Sahu, Rishabh Shukla, Juri Goswami, Priyank Gaur, and Aditya N. Panda",
+    "venue": "Chemical Physics Letters",
+    "year": 2018,
+    "details": "692, 152-159",
+    "url": "https://doi.org/10.1016/j.cplett.2017.12.034",
+    "selected": false
+  },
+  {
+    "title": "In-silico investigation of optical and electronic properties of heterocyclic conjugated polymers",
+    "authors": "Harikrishna Sahu",
+    "venue": "Doctoral dissertation",
+    "year": 2016,
+    "details": "Indian Institute of Technology Guwahati",
+    "selected": false
+  },
+  {
+    "title": "Helical and Nonhelical Structures of Vinylene- and Azomethine-Linked Heterocyclic Oligomers: A Computational Study of Conformation-Dependent Optoelectronic Properties",
+    "authors": "Harikrishna Sahu and Aditya N. Panda",
+    "venue": "Journal of Physical Chemistry C",
+    "year": 2015,
+    "details": "119, 22855-22865",
+    "url": "https://doi.org/10.1021/acs.jpcc.5b08100",
+    "selected": false
+  },
+  {
+    "title": "Structure and optoelectronic properties of helical pyridine-furan, pyridine-pyrrole and pyridine-thiophene oligomers",
+    "authors": "Harikrishna Sahu, Shashwat Gupta, Priyank Gaur, and Aditya N. Panda",
+    "venue": "Physical Chemistry Chemical Physics",
+    "year": 2015,
+    "details": "17, 20647-20657",
+    "url": "https://doi.org/10.1039/C5CP02872H",
+    "selected": false
+  },
+  {
+    "title": "Computational investigation of charge injection and transport properties of a series of thiophene-pyrrole based oligo-azomethines",
+    "authors": "Harikrishna Sahu and Aditya N. Panda",
+    "venue": "Physical Chemistry Chemical Physics",
+    "year": 2014,
+    "details": "16, 8563-8574",
+    "url": "https://doi.org/10.1039/C3CP55243H",
+    "selected": false
+  },
+  {
+    "title": "Computational study on the effect of substituents on the structural and electronic properties of thiophene-pyrrole-based pi-conjugated oligomers",
+    "authors": "Harikrishna Sahu and Aditya N. Panda",
+    "venue": "Macromolecules",
+    "year": 2013,
+    "details": "46, 844-855",
+    "url": "https://doi.org/10.1021/ma3024409",
+    "selected": false
   }
 ]
