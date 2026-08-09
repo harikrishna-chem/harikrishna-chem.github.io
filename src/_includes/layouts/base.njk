@@ -109,7 +109,7 @@
           <a class="site-nav__link{% if section == item.key %} is-active{% endif %}" href="{{ item.url }}">{{ item.label }}</a>
         {% endfor %}
         <form class="header-search" role="search" autocomplete="off" aria-label="Search writings and publications">
-          <input id="header-search-input" type="search" aria-label="Search writings and publications" aria-controls="header-search-results" aria-expanded="false">
+          <input id="header-search-input" type="search" placeholder="Search" aria-label="Search writings and publications" aria-controls="header-search-results" aria-expanded="false">
           <div class="header-search__results" id="header-search-results" hidden></div>
         </form>
       </nav>
