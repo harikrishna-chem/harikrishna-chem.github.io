@@ -51,6 +51,13 @@ export default function (eleventyConfig) {
     return JSON.stringify(value);
   });
 
+  eleventyConfig.addFilter("stripHtml", (value) => {
+    return String(value ?? "")
+      .replace(/<[^>]*>/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+  });
+
   eleventyConfig.addFilter("where", (items, key, value) => {
     return Array.isArray(items) ? items.filter((item) => item[key] === value) : [];
   });

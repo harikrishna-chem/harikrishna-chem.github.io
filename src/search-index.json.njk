@@ -1,0 +1,35 @@
+---
+permalink: /search-index.json
+eleventyExcludeFromCollections: true
+---
+[
+{%- set firstItem = true -%}
+{%- for post in collections.posts -%}
+  {%- if not firstItem %},{% endif -%}
+  {
+    "type": "Writing",
+    "title": {{ post.data.title | json | safe }},
+    "url": {{ post.url | json | safe }},
+    "date": {{ (post.date | readableDate) | json | safe }},
+    "sortDate": {{ (post.date | isoDate) | json | safe }},
+    "summary": {{ (post.data.summary or "") | json | safe }},
+    "tags": {{ (post.data.tags or []) | json | safe }},
+    "content": {{ (post.templateContent | stripHtml) | json | safe }}
+  }
+  {%- set firstItem = false -%}
+{%- endfor -%}
+{%- for publication in publications -%}
+  {%- if not firstItem %},{% endif -%}
+  {
+    "type": "Publication",
+    "title": {{ publication.title | json | safe }},
+    "url": {{ publication.url | json | safe }},
+    "date": {{ publication.year | json | safe }},
+    "sortDate": {{ (publication.year ~ "-12-31") | json | safe }},
+    "summary": {{ (publication.venue ~ (", " if publication.details else "") ~ (publication.details or "")) | json | safe }},
+    "tags": {{ [publication.venue, publication.year] | json | safe }},
+    "content": {{ (publication.title ~ " " ~ publication.authors ~ " " ~ publication.venue ~ " " ~ publication.year ~ " " ~ (publication.details or "")) | json | safe }}
+  }
+  {%- set firstItem = false -%}
+{%- endfor -%}
+]

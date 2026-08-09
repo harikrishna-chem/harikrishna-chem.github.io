@@ -104,11 +104,18 @@
           <small>{{ site.role }}</small>
         </span>
       </a>
-      <nav class="site-nav" aria-label="Main navigation">
-        {% for item in site.nav %}
-          <a class="site-nav__link{% if section == item.key %} is-active{% endif %}" href="{{ item.url }}">{{ item.label }}</a>
-        {% endfor %}
-      </nav>
+      <div class="site-header__tools">
+        <nav class="site-nav" aria-label="Main navigation">
+          {% for item in site.nav %}
+            <a class="site-nav__link{% if section == item.key %} is-active{% endif %}" href="{{ item.url }}">{{ item.label }}</a>
+          {% endfor %}
+        </nav>
+        <form class="header-search" role="search" autocomplete="off">
+          <label class="visually-hidden" for="header-search-input">Search writings and publications</label>
+          <input id="header-search-input" type="search" placeholder="Search" aria-controls="header-search-results" aria-expanded="false">
+          <div class="header-search__results" id="header-search-results" hidden></div>
+        </form>
+      </div>
     </div>
   </header>
 
@@ -127,5 +134,159 @@
       </div>
     </div>
   </footer>
+  <script>
+    (() => {
+      const form = document.querySelector(".header-search");
+      if (!form) return;
+
+      const input = form.querySelector("input");
+      const results = form.querySelector(".header-search__results");
+      const typeRank = {
+        Publication: 0,
+        Writing: 1
+      };
+      let index = [];
+      let indexLoaded = false;
+
+      const escapeHtml = (value) => String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+
+      const normalize = (value) => String(value || "").toLowerCase();
+
+      const scoreResult = (item, terms) => {
+        const title = normalize(item.title);
+        const summary = normalize(item.summary);
+        const tags = normalize((item.tags || []).join(" "));
+        const content = normalize(item.content);
+        let score = 0;
+
+        for (const term of terms) {
+          if (title.includes(term)) score += 8;
+          if (tags.includes(term)) score += 5;
+          if (summary.includes(term)) score += 3;
+          if (content.includes(term)) score += 1;
+        }
+
+        return score;
+      };
+
+      const getMatches = (query) => {
+        const terms = normalize(query).split(/\s+/).filter(Boolean);
+        if (!terms.length) return [];
+
+        return index
+          .map((item) => ({ item, score: scoreResult(item, terms) }))
+          .filter((result) => result.score > 0)
+          .sort((a, b) => {
+            const typeOrder = (typeRank[a.item.type] ?? 9) - (typeRank[b.item.type] ?? 9);
+            if (typeOrder) return typeOrder;
+
+            const dateOrder = String(b.item.sortDate || "").localeCompare(String(a.item.sortDate || ""));
+            if (dateOrder) return dateOrder;
+
+            return b.score - a.score;
+          });
+      };
+
+      const closeResults = () => {
+        results.hidden = true;
+        input.setAttribute("aria-expanded", "false");
+      };
+
+      const openResults = () => {
+        results.hidden = false;
+        input.setAttribute("aria-expanded", "true");
+      };
+
+      const renderResults = () => {
+        const query = input.value.trim();
+        if (!query) {
+          closeResults();
+          results.innerHTML = "";
+          return;
+        }
+
+        if (!indexLoaded) {
+          results.innerHTML = '<p class="header-search__message">Loading...</p>';
+          openResults();
+          return;
+        }
+
+        const allMatches = getMatches(query);
+        const matches = allMatches.slice(0, 7);
+        if (!allMatches.length) {
+          results.innerHTML = '<p class="header-search__message">No matches found.</p>';
+          openResults();
+          return;
+        }
+
+        const matchSummary = allMatches.length > matches.length
+          ? `Showing ${matches.length} of ${allMatches.length} matches`
+          : allMatches.length === 1 ? "1 match" : `${allMatches.length} matches`;
+
+        results.innerHTML = `
+          <div class="header-search__summary">${matchSummary}</div>
+          ${matches.map(({ item }) => `
+            <a class="header-search__result" href="${escapeHtml(item.url)}">
+              <span class="header-search__meta">${escapeHtml(item.type)}${item.date ? ` / ${escapeHtml(item.date)}` : ""}</span>
+              <strong>${escapeHtml(item.title)}</strong>
+              ${item.summary ? `<small>${escapeHtml(item.summary)}</small>` : ""}
+            </a>
+          `).join("")}
+        `;
+        openResults();
+      };
+
+      const loadIndex = () => {
+        if (indexLoaded) return Promise.resolve();
+
+        return fetch("/search-index.json")
+          .then((response) => {
+            if (!response.ok) throw new Error("Search index unavailable");
+            return response.json();
+          })
+          .then((items) => {
+            index = items;
+            indexLoaded = true;
+          })
+          .catch(() => {
+            indexLoaded = true;
+            index = [];
+          });
+      };
+
+      input.addEventListener("focus", () => {
+        loadIndex().then(renderResults);
+      });
+
+      input.addEventListener("input", () => {
+        loadIndex().then(renderResults);
+      });
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        loadIndex().then(() => {
+          const firstMatch = getMatches(input.value.trim())[0];
+          if (firstMatch) {
+            window.location.href = firstMatch.item.url;
+          } else {
+            renderResults();
+          }
+        });
+      });
+
+      document.addEventListener("click", (event) => {
+        if (!form.contains(event.target)) closeResults();
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeResults();
+      });
+    })();
+  </script>
 </body>
 </html>

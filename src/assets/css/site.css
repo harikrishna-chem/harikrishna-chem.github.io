@@ -62,6 +62,16 @@ a:hover {
   transform: translateY(0);
 }
 
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
 .site-header {
   position: sticky;
   top: 0;
@@ -79,6 +89,15 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
+}
+
+.site-header__tools {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  justify-content: flex-end;
+  min-width: 0;
 }
 
 .brand {
@@ -141,6 +160,79 @@ a:hover {
   box-shadow: 0 1px 8px rgba(31, 42, 46, 0.08);
   color: var(--teal-dark);
   font-weight: 700;
+}
+
+.header-search {
+  position: relative;
+  width: clamp(150px, 18vw, 220px);
+}
+
+.header-search input {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--ink);
+  font: inherit;
+  min-height: 36px;
+  padding: 0.48rem 0.65rem;
+  width: 100%;
+}
+
+.header-search input:focus {
+  border-color: var(--teal);
+  outline: 3px solid rgba(15, 118, 110, 0.14);
+}
+
+.header-search__results {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  max-height: min(70vh, 520px);
+  overflow: auto;
+  padding: 0.35rem;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.45rem);
+  width: min(420px, calc(100vw - 32px));
+  z-index: 20;
+}
+
+.header-search__summary,
+.header-search__message {
+  color: var(--muted);
+  font-size: 0.82rem;
+  margin: 0;
+  padding: 0.45rem 0.55rem;
+}
+
+.header-search__result {
+  border-top: 1px solid var(--line);
+  color: var(--ink);
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.62rem 0.55rem;
+  text-decoration: none;
+}
+
+.header-search__result:first-of-type {
+  border-top: 0;
+}
+
+.header-search__result:hover {
+  background: var(--surface-soft);
+  color: var(--ink);
+}
+
+.header-search__meta,
+.header-search__result small {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.header-search__result strong {
+  font-size: 0.9rem;
+  line-height: 1.25;
 }
 
 main {
@@ -591,6 +683,14 @@ code {
   .site-nav {
     justify-content: flex-start;
     overflow-x: auto;
+  }
+
+  .site-header__tools {
+    justify-content: flex-start;
+  }
+
+  .header-search {
+    width: min(100%, 360px);
   }
 
   .feature-grid {
