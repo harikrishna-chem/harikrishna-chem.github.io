@@ -62,16 +62,6 @@ a:hover {
   transform: translateY(0);
 }
 
-.visually-hidden {
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
-
 .site-header {
   position: sticky;
   top: 0;
@@ -89,15 +79,6 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-}
-
-.site-header__tools {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.65rem;
-  justify-content: flex-end;
-  min-width: 0;
 }
 
 .brand {
@@ -163,18 +144,19 @@ a:hover {
 }
 
 .header-search {
+  margin: 0;
   position: relative;
-  width: clamp(150px, 18vw, 220px);
+  width: 5.9rem;
 }
 
 .header-search input {
   background: var(--surface);
   border: 1px solid var(--line);
-  border-radius: var(--radius);
+  border-radius: 6px;
   color: var(--ink);
   font: inherit;
-  min-height: 36px;
-  padding: 0.48rem 0.65rem;
+  min-height: 2.24rem;
+  padding: 0.48rem 0.55rem;
   width: 100%;
 }
 
@@ -685,12 +667,8 @@ code {
     overflow-x: auto;
   }
 
-  .site-header__tools {
-    justify-content: flex-start;
-  }
-
   .header-search {
-    width: min(100%, 360px);
+    width: 5.9rem;
   }
 
   .feature-grid {

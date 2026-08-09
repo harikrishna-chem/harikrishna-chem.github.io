@@ -104,18 +104,15 @@
           <small>{{ site.role }}</small>
         </span>
       </a>
-      <div class="site-header__tools">
-        <nav class="site-nav" aria-label="Main navigation">
-          {% for item in site.nav %}
-            <a class="site-nav__link{% if section == item.key %} is-active{% endif %}" href="{{ item.url }}">{{ item.label }}</a>
-          {% endfor %}
-        </nav>
-        <form class="header-search" role="search" autocomplete="off">
-          <label class="visually-hidden" for="header-search-input">Search writings and publications</label>
-          <input id="header-search-input" type="search" placeholder="Search" aria-controls="header-search-results" aria-expanded="false">
+      <nav class="site-nav" aria-label="Main navigation">
+        {% for item in site.nav %}
+          <a class="site-nav__link{% if section == item.key %} is-active{% endif %}" href="{{ item.url }}">{{ item.label }}</a>
+        {% endfor %}
+        <form class="header-search" role="search" autocomplete="off" aria-label="Search writings and publications">
+          <input id="header-search-input" type="search" aria-label="Search writings and publications" aria-controls="header-search-results" aria-expanded="false">
           <div class="header-search__results" id="header-search-results" hidden></div>
         </form>
-      </div>
+      </nav>
     </div>
   </header>
 
